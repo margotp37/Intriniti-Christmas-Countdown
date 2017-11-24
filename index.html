@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Loading the Stylesheets. -->
+  <link rel="stylesheet" href="res/css/custom.css">
+  <link rel="stylesheet" href="res/css/flipclock.css">
+  <link rel="shortcut icon" href="res/img/favicon.ico" type="image/x-icon">
+  <title>Merry Christmas</title>
+</head>
+  <body>
+        <ul class="cheer">
+          <li>
+            <span>Christmas image 1</span> </li>
+          <li> <span>Christmas image 2</span> </li>
+          <li> <span>Christmas image 3</span> </li>
+          <li> <span>Christmas image 4</span> </li>
+          <div class="snow"></div>
+        </ul>
+        <div class="logo">
+          <img src="res/img/intriniti-logo.png" alt="Intriniti">
+        </div>
+        <div class="clock-container">
+          <div class="tick-tock"></div>
+        </div>
+    <!-- Loading the JS dependencies. -->
+    <script src="res/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="res/js/flipclock.min.js" charset="utf-8"></script>
+  </body>
+</html>
+
+<script type="text/javascript">
+  var date = new Date(2017, 11, 25); // November is 11 as 0 is January. Can be altered to any date.
+  var now = new Date();
+  var diff = (date.getTime()/1000) - (now.getTime()/1000);
+
+  var clock = $('.tick-tock').FlipClock(diff,{
+    clockFace: 'DailyCounter',
+    countdown: true
+  });
+</script>
